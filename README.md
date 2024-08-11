@@ -17,8 +17,18 @@ Comparison of several models for image segmentation (meant to evolve)
       </ul>
     </li>
     <li><a href="#roadmap">Roadmap</a></li>
+	<li><a href="#unet">UNet</a></li>
+		<li>
+			<a href="#unet-presentation">Unet Presentation</a>
+			<ul>
+			<li><a href="#unet-trainning">Unet Trainning</a></li>
+			</ul>
+			<ul>
+			<li><a href="#unet-results-&-inference">Unet Results & Inference</a></li>
+			</ul>
+		</li>
     <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
+    <li><a href="#references">references</a></li>
   </ol>
 </details>
 
@@ -88,9 +98,9 @@ For more information about augmentations, [check this](https://albumentations.ai
 - [ ] Segment Anything (Meta) ?
 
 
-
+<!-- UNET -->
 # UNet
-#### Presentation
+#### Unet Presentation
 The [U-Net](https://arxiv.org/abs/1505.04597) architecture was initially designed for medical image segmentation, but it has since been adapted for many other use cases.
 ![UNet](./Images/unet.png)
 The U-Net has an encoder-decoder structure.
@@ -105,4 +115,27 @@ The long gray arrows running across the “U” are skip connections, and they s
 
 The output of the model has the same width and height as the input, however the number of channels will be equal to the number of classes we are segmenting.
 
+#### Unet Trainning
+![UNet_trainning](./Images/unet-trainning.png)
+
+
+#### Unet Results & Inference
+![UNet_result_mix](./Images/unet_result_mix.png)
+![UNet_inference](./Images/unet_inference.png)
+![UNet_conf](./Images/unet_conf.png)
+
+
+
 # SegFormer
+#### SegFormer Presentation
+
+#### SegFormer Trainning
+![seg_trainning](./Images/seg_trainning.png)
+
+
+#### SegFormer Results & Inference
+![seg_result_mix](./Images/seg_result_mix.png)
+![seg_inference](./Images/seg_inference.png)
+![seg_conf](./Images/seg_conf.png)
+
+# References
