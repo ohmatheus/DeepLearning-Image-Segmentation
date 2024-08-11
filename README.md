@@ -91,7 +91,18 @@ For more information about augmentations, [check this](https://albumentations.ai
 
 # UNet
 #### Presentation
+The [U-Net](https://arxiv.org/abs/1505.04597) architecture was initially designed for medical image segmentation, but it has since been adapted for many other use cases.
+![UNet](./Images/unet.png)
+The U-Net has an encoder-decoder structure.
 
+The encoder is used to compress the input image into a latent space representation through convolutions and downsampling.
 
+The decoder is used to extrapolate the latent representation into a segmented image, through convolutions and upsampling.
+
+The long gray arrows running across the “U” are skip connections, and they serve two main purposes:
+* During the forward pass, they enable the decoder to access information from the encoder.
+* During the backward pass, they act as a “gradient superhighway” for gradients from the decoder to flow to the encoder.
+
+The output of the model has the same width and height as the input, however the number of channels will be equal to the number of classes we are segmenting.
 
 # SegFormer
