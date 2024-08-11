@@ -13,7 +13,7 @@ Comparison of several models for image segmentation (meant to evolve)
         <li><a href="#using">Using</a></li>
       </ul>
 	  <ul>
-        <li><a href="#dataset_used">Dataset Used</a></li>
+        <li><a href="#dataset-used">Dataset Used</a></li>
       </ul>
     </li>
     <li>
@@ -37,9 +37,9 @@ The core task of image segmentation is to classify each pixel in an image.
 
 There are 3 types of image segmentation:
 ![img_seg_expl](./Images/images_segmentations.png)
-*Semantic segmentation classifies each pixel based on its semantic class. All the birds belong to the same class.
-*Instance segmentation assigns unique labels to different instances, even if they are of the same semantic class. Each bird belongs to a different class.
-*Panoptic segmentation combines the two, providing both class-level and instance-level labels. Each bird has its own class, but they are all identified as a “bird”.
+* Semantic segmentation classifies each pixel based on its semantic class. All the birds belong to the same class.
+* Instance segmentation assigns unique labels to different instances, even if they are of the same semantic class. Each bird belongs to a different class.
+* Panoptic segmentation combines the two, providing both class-level and instance-level labels. Each bird has its own class, but they are all identified as a “bird”.
 
 Here, we will only focus on 'basic' semantic segmentation.
 
@@ -62,15 +62,20 @@ Cityscape's main content is dashboard camera images in Germany streets, just lik
 ![plot](./Images/cityscapes_exemple_01.png)
 
 Originally, Cityscape contains 34 differents segmentation classes, wich i reduced to 8 main categories:
-*Void
-*Flat
-*Construction
-*Object
-*Nature
-*Sky
-*Human
-*Vehicle
+* Void
+* Flat
+* Construction
+* Object
+* Nature
+* Sky
+* Human
+* Vehicle
 
-This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
+The Dataset I use contains 3,475 images. After split, the distribution is the following:
+* 2953 images for trainning
+* 261 images for validation
+* 261 images for testing
 
-![plot](./Images/cityscapes_exemple_01.png)
+I have not planned yet to use any augmentation for this project.
+For more information about augmentations, [check this](https://albumentations.ai/docs/introduction/image_augmentation/).
+
