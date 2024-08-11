@@ -16,14 +16,6 @@ Comparison of several models for image segmentation (meant to evolve)
         <li><a href="#dataset-used">Dataset Used</a></li>
       </ul>
     </li>
-    <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
-      </ul>
-    </li>
-    <li><a href="#usage">Usage</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="#acknowledgments">Acknowledgments</a></li>
@@ -53,6 +45,8 @@ starting with the first of its kind, the UNet architecture.
 * [MLFlow](https://mlflow.org/)
 * [pytorch_lightning](https://lightning.ai/docs/pytorch/stable/) (for segformer)
 
+
+
 <!-- DATASET USED -->
 ### Dataset Used
 To be able to compare our models, we will use the [Cityscape Dataset](https://www.cityscapes-dataset.com/).
@@ -60,6 +54,8 @@ It's one of the most popular dataset used to compare model for this kind of task
 Cityscape's main content is dashboard camera images in Germany streets, just like images used for car autonomous AI.
 
 ![plot](./Images/cityscapes_exemple_01.png)
+
+
 
 Originally, Cityscape contains 34 differents segmentation classes, wich i reduced to 8 main categories:
 * Void
@@ -71,11 +67,31 @@ Originally, Cityscape contains 34 differents segmentation classes, wich i reduce
 * Human
 * Vehicle
 
+
+
 The Dataset I use contains 3,475 images. After split, the distribution is the following:
 * 2953 images for trainning
 * 261 images for validation
 * 261 images for testing
 
 I have not planned yet to use any augmentation for this project.
+
 For more information about augmentations, [check this](https://albumentations.ai/docs/introduction/image_augmentation/).
 
+
+
+<!-- ROADMAP -->
+## Roadmap
+- [x] UNet
+- [x] Segformer (mit-b3)
+- [ ] Use MLFlow
+- [ ] Segment Anything (Meta) ?
+
+
+
+# UNet
+#### Presentation
+
+
+
+# SegFormer
