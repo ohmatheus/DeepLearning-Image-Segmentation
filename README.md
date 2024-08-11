@@ -140,11 +140,14 @@ SegFormer implementation rely on multiple previous researchs. Back in 2021, a Go
 '[AN IMAGE IS WORTH 16X16 WORDS: TRANSFORMERS FOR IMAGE RECOGNITION AT SCALE](https://arxiv.org/pdf/2010.11929)'.
 This paper illustrate the fact that it is possible to realize image segmentation without the uses of convolution, implementing a model, ViT, 
 relying only on Transformers-Self-attention-based architectures, only used in NLP and LLM until then, to make pixel predictions.
+
 ![vit_archi](./Images/vit_archi.png)
+
 The main idea is to cut the images in 'patches', multiple patches make a sequence, using self attention between those patches made segmentation possible.
 
 The abstract from the paper is the following:
-" While the Transformer architecture has become the de-facto standard for natural language processing tasks, 
+
+"While the Transformer architecture has become the de-facto standard for natural language processing tasks, 
 its applications to computer vision remain limited. In vision, attention is either applied in conjunction with convolutional networks, 
 or used to replace certain components of convolutional networks while keeping their overall structure in place. 
 We show that this reliance on CNNs is not necessary and a pure transformer applied directly to sequences of image 
@@ -165,21 +168,30 @@ The “hierarchical Transformer” refers to a transformer architecture that ope
 The model exists at different scale :
 ![seg_mits](./Images/mits.png)
 
-We are using the mit-b3 version of segformer, whose encoder has been pre-trainned on the ImageNet-1k dataset.
+We are using the mit-b3 version of segformer from hugging face, whose encoder has been pre-trainned on the ImageNet-1k dataset.
 
 
 
 #### SegFormer Trainning
 For 20 epochs, with a patience of 3. Using AdamW optimizer and a learning rate of 10-3
+
 ![seg_trainning](./Images/seg_trainning.png)
+
 For yet unknow reasons, validation suddenly drops around the 18th epoch.
 
 #### SegFormer Results & Inference
 ![seg_result_mix](./Images/seg_result_mix.png)
 ![seg_inference](./Images/seg_inference.png)
 
+We achieve here better visuals results than Unet, especially the bicycle and the human on the right as we can see on that image. 
 
 ![seg_conf](./Images/seg_conf.png)
+
+Better human recognition than Unet. Better overall results.
 Also struggling on objects 50% of the time.
 
 # References
+Here are some links for interesting papers and websites:
+* [Efficient Image Segmentation Using PyTorch](https://towardsdatascience.com/efficient-image-segmentation-using-pytorch-part-1-89e8297a0923)
+* [The Illustrated Transformer](https://jalammar.github.io/illustrated-transformer/): a very good website which explains the differents mechanisms behind transformers' architectures.
+* [Attention Is All You Need](https://arxiv.org/pdf/1706.03762) : Original (2017) paper with the very first Transformer implementation.
