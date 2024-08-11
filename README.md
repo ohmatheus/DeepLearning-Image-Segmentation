@@ -1,8 +1,76 @@
+<a id="readme-top"></a>
+
 # ImageSegComp
 Comparison of several models for image segmentation (meant to evolve)
 
-Also check out the following resources:
-* fine-tuning SegFormer (in collaboration with [segments.ai](https://segments.ai/)): https://huggingface.co/blog/fine-tune-segformer
-* deploying SegFormer (and run inference) with Amazon SageMaker: https://www.philschmid.de/image-segmentation-sagemaker
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-this-project">About This Project</a>
+      <ul>
+        <li><a href="#using">Using</a></li>
+      </ul>
+	  <ul>
+        <li><a href="#dataset_used">Dataset Used</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#installation">Installation</a></li>
+      </ul>
+    </li>
+    <li><a href="#usage">Usage</a></li>
+    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#acknowledgments">Acknowledgments</a></li>
+  </ol>
+</details>
+
+<!-- ABOUT THIS PROJECT -->
+## About This Project
+In deep learning, Image segmentation is a computer vision technique that partitions a digital image into discrete groups of pixels.
+The core task of image segmentation is to classify each pixel in an image.
+
+There are 3 types of image segmentation:
+![img_seg_expl](./Images/images_segmentations.png)
+*Semantic segmentation classifies each pixel based on its semantic class. All the birds belong to the same class.
+*Instance segmentation assigns unique labels to different instances, even if they are of the same semantic class. Each bird belongs to a different class.
+*Panoptic segmentation combines the two, providing both class-level and instance-level labels. Each bird has its own class, but they are all identified as a “bird”.
+
+Here, we will only focus on 'basic' semantic segmentation.
+
+The main goal of this project is purely personnal, and is not a reasearch project in any shape or form. 
+I just want to test, train, and try different architecture for image segmentation tasks, 
+starting with the first of its kind, the UNet architecture.
+
+<!-- USING -->
+### Using
+* [Pytorch](https://pytorch.org/)
+* [MLFlow](https://mlflow.org/)
+* [pytorch_lightning](https://lightning.ai/docs/pytorch/stable/) (for segformer)
+
+<!-- DATASET USED -->
+### Dataset Used
+To be able to compare our models, we will use the [Cityscape Dataset](https://www.cityscapes-dataset.com/).
+It's one of the most popular dataset used to compare model for this kind of task, along others, like COCO dataset and ADE20K. 
+Cityscape's main content is dashboard camera images in Germany streets, just like images used for car autonomous AI.
+
+![plot](./Images/cityscapes_exemple_01.png)
+
+Originally, Cityscape contains 34 differents segmentation classes, wich i reduced to 8 main categories:
+*Void
+*Flat
+*Construction
+*Object
+*Nature
+*Sky
+*Human
+*Vehicle
+
+This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
 
 ![plot](./Images/cityscapes_exemple_01.png)
